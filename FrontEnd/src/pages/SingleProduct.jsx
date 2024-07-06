@@ -228,7 +228,7 @@ const SingleProduct = ({ Products }) => {
         }
     };
     const getWhatsAppUrl = (phoneNumber, productLink) => {
-        const message = `Hello ElectroTim, I would like to inquire about this product please: ${productLink}`;
+        const message = `Hello ElectroTim, I would like to inquire about this product please: ${productLink} ` ;
         const encodedMessage = encodeURIComponent(message);
         return `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`;
     };
