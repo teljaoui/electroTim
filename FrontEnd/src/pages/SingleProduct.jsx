@@ -335,7 +335,7 @@ const SingleProduct = ({ Products }) => {
                                     <div className="d-flex gap-15">
                                         <button className="d-flex align-items-center add-link">
                                             <FaWhatsapp className="fs-5" />
-                                            <p className="mb-0" onClick={() => handleWhatsAppClick('+212 611-493478', window.location.href)}>Order via WhatsApp</p>
+                                            <p className="mb-0" onClick={() => handleWhatsAppClick('+212 627-883606', window.location.href)}>Order via WhatsApp</p>
                                         </button>
                                         <button className="d-flex align-items-center add-link">
                                             <AiOutlineHeart className="fs-5" />
