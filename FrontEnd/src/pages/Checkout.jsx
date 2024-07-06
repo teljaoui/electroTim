@@ -24,7 +24,12 @@ export default function Checkout() {
     const form = useRef();
     const carts = useSelector((data) => data.carts);
 
-    console.log(carts);
+    useEffect(() => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }, []);
     useEffect(() => {
         const fetchUserData = async () => {
             try {
@@ -45,12 +50,6 @@ export default function Checkout() {
         fetchUserData();
     }, [])
 
-    useEffect(() => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    }, []);
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (!city || !adress || !suiteAderess) {

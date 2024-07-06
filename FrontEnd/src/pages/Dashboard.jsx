@@ -12,6 +12,13 @@ import { useSelector } from 'react-redux';
 
 
 const Dashboard = () => {
+    
+    useEffect(() => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }, []);
     const [user, setUser] = useState(null);
     const [orders, setOrders] = useState([]);
     const [loading, setLoading] = useState(true);

@@ -10,7 +10,12 @@ export default function Login() {
     const [errorMessage, setErrorMessage] = useState('');
     const navigate = useNavigate();
 
-
+    useEffect(() => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }, []);
     useEffect(() => {
         const token = localStorage.getItem('token');
         if (token) {
@@ -47,12 +52,7 @@ export default function Login() {
             }
         }
     };
-    useEffect(() => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    }, []);
+
     return (
         <>
             <Meta title={"Login"} />
@@ -76,7 +76,7 @@ export default function Login() {
                                     </div>
                                     <div className="d-flex flex-column justify-content-center gap-15 align-items-center ">
                                         <button className="button w-25" onClick={handleSubmit}>Login</button>
-                                        <Link to="/signup" className="signup">If you don't have an account?  Register now</Link>
+                                        <Link to="/signup" className="signup">If you don't have an account? <span>Register now</span></Link>
                                     </div>
                                 </form>
                             </div>

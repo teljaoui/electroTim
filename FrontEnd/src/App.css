@@ -119,7 +119,7 @@ p {
 }
 
 .header-upper .logo {
-  font-family: "Gill Sans", sans-serif;
+  font-family: Georgia, serif;
   color: var(--color-fedb69);
 }
 
@@ -786,6 +786,11 @@ footer .payment img {
 .auth-card .signup {
   color: var(--color-bf4800);
 
+}
+.auth-card .signup span{
+  color: var(--color-232f3e);
+  font-weight: 550;
+  font-size: 15px;
 }
 
 .auth-card .signup:hover {

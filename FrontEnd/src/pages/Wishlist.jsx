@@ -1,6 +1,5 @@
 import React from 'react';
 import Meta from '../components/Meta';
-import ReactStars from "react-rating-stars-component";
 import BreadCrumb from '../components/BreadCrumb';
 import { Link } from 'react-router-dom';
 import { FaHeartCircleXmark } from "react-icons/fa6";
@@ -15,7 +14,6 @@ export default function Wishlist() {
             behavior: 'smooth'
         });
     }, []);
-
     const wishlist = useSelector((state) => state.wishlist);
     const dispatch = useDispatch();
 
