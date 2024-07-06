@@ -15,6 +15,7 @@ import FeaturedCollection from '../components/FeaturedCollection';
 import Zoom from 'react-medium-image-zoom';
 import 'react-medium-image-zoom/dist/styles.css';
 import axios from 'axios';
+import { FaWhatsapp } from "react-icons/fa";
 
 const SingleProduct = ({ Products }) => {
     const { id } = useParams();
@@ -226,7 +227,16 @@ const SingleProduct = ({ Products }) => {
             }
         }
     };
+    const getWhatsAppUrl = (phoneNumber, productLink) => {
+        const message = `Hello ElectroTim, I would like to inquire about this product please: ${productLink}`;
+        const encodedMessage = encodeURIComponent(message);
+        return `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`;
+    };
 
+    const handleWhatsAppClick = (phoneNumber, productLink) => {
+        const whatsappUrl = getWhatsAppUrl(phoneNumber, productLink);
+        window.open(whatsappUrl, '_blank');
+    };
     if (!Product) {
         return <div class="loader"></div>;
     }
@@ -322,7 +332,11 @@ const SingleProduct = ({ Products }) => {
                                             <button className="buttonbg" onClick={() => { checkout(Product) }}>Buy It Now</button>
                                         </div>
                                     </div>
-                                    <div>
+                                    <div className="d-flex gap-15">
+                                        <button className="d-flex align-items-center add-link">
+                                            <FaWhatsapp className="fs-5" />
+                                            <p className="mb-0" onClick={() => handleWhatsAppClick('+212 611-493478', window.location.href)}>Order via WhatsApp</p>
+                                        </button>
                                         <button className="d-flex align-items-center add-link">
                                             <AiOutlineHeart className="fs-5" />
                                             <p className="mb-0" onClick={() => { addwishlist(Product) }}>Add to Wishlist</p>
