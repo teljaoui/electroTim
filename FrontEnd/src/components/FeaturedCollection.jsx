@@ -158,6 +158,11 @@ export default function FeaturedCollection({ currentProductId, Products }) {
                     initialSlide: 2,
                     nextArrow: null,
                     prevArrow: null,
+                    infinite: true,
+                    autoplay: true,
+                    speed: 300,
+                    autoplaySpeed: 2500,
+                    cssEase: "linear"
                 }
             },
             {
@@ -168,6 +173,11 @@ export default function FeaturedCollection({ currentProductId, Products }) {
                     initialSlide: 2,
                     nextArrow: null,
                     prevArrow: null,
+                    infinite: true,
+                    autoplay: true,
+                    speed: 300,
+                    autoplaySpeed: 2500,
+                    cssEase: "linear"
                 }
             }
         ]
