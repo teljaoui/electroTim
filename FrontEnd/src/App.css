@@ -99,6 +99,20 @@ p {
   color: #fff;
 }
 
+.buttonwhat{
+  background-color: #25D366;
+  color: #fff;
+  font-size: 12px;
+  padding: 10px 24px;
+  border-radius: 28px;
+  transition: 0.5s ease;
+  border: 0px;
+}
+.buttonwhat:hover {
+  background-color: #075E54;
+  color: #fff;
+}
+
 /* Header Part*/
 .header-top-strip {
   border-bottom: 1px solid var(--color-3b4149);
