@@ -52,7 +52,7 @@ export const Home = ({ Products, Categories }) => {
                       <div className="main-banner position-relative" key={product.id}>
                         <img src={`https://admin.electrotim.com/${product.Adimg}`} alt="" className="img-fluid rounded-3" />
                         <div className="main-banner-content position-absolute">
-                          <h4>SURALIMENTÉ POUR LES PROS.</h4>
+                          <h4>SUPERCHARGED FOR PROS.</h4>
                           <h5>{product.title.length > 15 ? product.title.substring(0, 15) + '...' : product.title}</h5>
                           <p>Depuis {product.price} Dhs</p>
                           <Link to={`/product/${product.id}`} className="button">BUY NOW</Link>
