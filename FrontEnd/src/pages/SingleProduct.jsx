@@ -308,11 +308,6 @@ const SingleProduct = ({ Products }) => {
                                         <a className="text-dark text-decoration-underline" href="#review-form" onClick={toggleReviewForm}>Write a Review</a>
                                     </div>
                                 </div>
-                                <div className="border-bottom">
-                                    <div className="d-flex gap-15 my-3">
-                                        <button className="buttonwhat  w-100" onClick={() => handleWhatsAppClick('+212 627-883606', window.location.href)}>  <FaWhatsapp className="fs-5" /> Order via WhatsApp</button>
-                                    </div>
-                                </div>
                                 <div className="border-bottom py-3">
                                     <div className="d-flex align-items-center gap-10 my-3">
                                         <h6 className="product-heading">Category : </h6>
@@ -342,6 +337,11 @@ const SingleProduct = ({ Products }) => {
                                             <AiOutlineHeart className="fs-5" />
                                             <p className="mb-0" onClick={() => { addwishlist(Product) }}>Add to Wishlist</p>
                                         </button>
+                                    </div>
+                                </div>
+                                <div className="border-bottom">
+                                    <div className="d-flex gap-15 my-3">
+                                        <button className="buttonwhat  w-100" onClick={() => handleWhatsAppClick('+212 627-883606', window.location.href)}>  <FaWhatsapp className="fs-5" /> Order via WhatsApp</button>
                                     </div>
                                 </div>
                                 <div className="border-bottom d-flex gap-15 py-2 service ">
