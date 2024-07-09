@@ -177,7 +177,8 @@ export default function FeaturedCollection({ currentProductId, Products }) {
                     autoplay: true,
                     speed: 300,
                     autoplaySpeed: 2500,
-                    cssEase: "linear"
+                    cssEase: "linear",
+                    dots: false
                 }
             }
         ]

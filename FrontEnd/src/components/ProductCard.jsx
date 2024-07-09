@@ -109,7 +109,7 @@ export const ProductCard = ({ clickedButton, categorie, priceTo, priceFrom, Prod
         displayedProducts = searchProducts;
     }
 
-    const [show, setShow] = useState(8);
+    const [show, setShow] = useState(16);
     const handelShow = () => {
         setShow(show + show)
     }

@@ -35,7 +35,6 @@ export default function Login() {
 
             if (response.status === 200) {
                 const data = response.data;
-                console.log(data);
                 localStorage.setItem('token', data.token);
                 alert('Login successful!');
                 navigate('/dashboard');
@@ -45,10 +44,8 @@ export default function Login() {
         } catch (error) {
             if (error.response) {
                 setErrorMessage(error.response.data.message);
-                console.error('Error:', error.response.data);
             } else {
                 setErrorMessage(error.message);
-                console.error('Error:', error.message);
             }
         }
     };
