@@ -16,6 +16,8 @@ import Zoom from 'react-medium-image-zoom';
 import 'react-medium-image-zoom/dist/styles.css';
 import axios from 'axios';
 import { FaWhatsapp } from "react-icons/fa";
+import { IoIosLink } from "react-icons/io";
+
 
 const SingleProduct = ({ Products }) => {
     const { id } = useParams();
@@ -30,6 +32,7 @@ const SingleProduct = ({ Products }) => {
     const [email, setEmail] = useState('');
     const [reviewform, setReviewform] = useState(0);
     const [content, setContent] = useState('');
+
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -237,6 +240,32 @@ const SingleProduct = ({ Products }) => {
         const whatsappUrl = getWhatsAppUrl(phoneNumber, productLink);
         window.open(whatsappUrl, '_blank');
     };
+    const copyProductLink = () => {
+        navigator.clipboard.writeText(window.location.href)
+            .then(() => {
+                toast.success("Product Link copy with success", {
+                    position: "top-left",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                });
+            })
+            .catch((err) => {
+                 toast.error("Failed to copy", {
+                position: "top-left",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
+            });
+    };
+    
     if (!Product) {
         return <div class="loader"></div>;
     }
@@ -336,6 +365,10 @@ const SingleProduct = ({ Products }) => {
                                         <button className="d-flex align-items-center add-link">
                                             <AiOutlineHeart className="fs-5" />
                                             <p className="mb-0" onClick={() => { addwishlist(Product) }}>Add to Wishlist</p>
+                                        </button>
+                                        <button className="d-flex align-items-center add-link">
+                                            <IoIosLink className="fs-5" />
+                                            <p className="mb-0" onClick={() => { copyProductLink() }}>Copy Product Link</p>
                                         </button>
                                     </div>
                                 </div>
