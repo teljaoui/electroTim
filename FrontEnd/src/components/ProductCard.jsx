@@ -91,8 +91,8 @@ export const ProductCard = ({ clickedButton, categorie, priceTo, priceFrom, Prod
     const filteredProducts = categorie ? Product.filter(product => product.categorie.title === categorie) : Products;
 
     let priceFilteredProducts = filteredProducts;
-    if (priceFrom && priceTo) {
-        priceFilteredProducts = priceFilteredProducts.filter(product => product.price >= priceFrom && product.price <= priceTo);
+    if (priceFrom || priceTo) {
+        priceFilteredProducts = priceFilteredProducts.filter(product => product.price >= priceFrom || product.price <= priceTo);
     }
 
     const searchItems = useSelector(state => state.search);

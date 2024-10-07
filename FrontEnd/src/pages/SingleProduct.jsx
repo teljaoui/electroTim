@@ -225,6 +225,15 @@ const SingleProduct = ({ Products }) => {
         } catch (error) {
             if (error.response) {
                 console.error('Error:', error.response.data);
+                toast.error("Please select a rating.", {
+                    position: "top-left",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                });
             } else {
                 console.error('Error:', error.message);
             }
@@ -254,18 +263,18 @@ const SingleProduct = ({ Products }) => {
                 });
             })
             .catch((err) => {
-                 toast.error("Failed to copy", {
-                position: "top-left",
-                autoClose: 2000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-            });
+                toast.error("Failed to copy", {
+                    position: "top-left",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                });
             });
     };
-    
+
     if (!Product) {
         return <div class="loader"></div>;
     }
