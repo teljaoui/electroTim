@@ -67,7 +67,7 @@ class ApiController extends Controller
         try {
             $request->validate([
                 'email' => 'required',
-                'review' => 'required',
+                'review' => 'required|numeric|min:1',
                 'content' => 'required',
                 'product_id' => 'required'
             ]);
