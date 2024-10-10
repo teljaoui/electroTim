@@ -1,11 +1,23 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaFacebook } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io";
 import ScrollToTopButton from './ScrollToTopButton ';
 import { AiFillHome } from 'react-icons/ai';
 
 export const Footer = ({ Categories, user }) => {
+  const [useremail , setUserEmail] = useState("");
+  const navigate = useNavigate();
+
+  const AddUser = () =>{
+    if(useremail == ""){
+      alert("please enter your email");
+    }else{
+      navigate(`/signup?email=${encodeURIComponent(useremail)}`);
+      setUserEmail("");
+      
+    }
+  }
   return (
     <>
       <ScrollToTopButton />
@@ -22,10 +34,12 @@ export const Footer = ({ Categories, user }) => {
               <div class="input-group">
                 <input
                   className="form-control py-1"
-                  type="text"
+                  type="email"
                   placeholder="Your Email Adress..."
+                  value={useremail}
+                  onChange={(e)=>setUserEmail(e.target.value)}
                 />
-                <span className="input-group-text py-2">
+                <span className="input-group-text py-2" onClick={AddUser}>
                   Subscribe
                 </span>
               </div>

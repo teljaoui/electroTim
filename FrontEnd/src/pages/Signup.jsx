@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Meta from '../components/Meta';
 import BreadCrumb from '../components/BreadCrumb';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 export default function Signup() {
@@ -13,6 +13,21 @@ export default function Signup() {
     const [confirmPassword, setConfirmPassword] = useState('');
     const [errorMessages, setErrorMessages] = useState({});
     const navigate = useNavigate();
+    const location = useLocation();
+    const queryParams = new URLSearchParams(location.search);
+    const useremail = queryParams.get('email');
+    const [messagesub , setMessagesub] = useState(false)
+
+    useEffect(() => {
+        if (useremail) {
+            setEmail(useremail);
+            setMessagesub(true)
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    }, [useremail]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -60,6 +75,7 @@ export default function Signup() {
                         <div className="col-12">
                             <div className="auth-card">
                                 <h3>Create Account</h3>
+                                {messagesub && <p className="alert alert-danger mx-auto">Please fill out the questionnaire</p>}
                                 <form className="d-flex flex-column gap-15" onSubmit={handleSubmit}>
                                     {errorMessages.general && <p className="error-message text-danger">{errorMessages.general}</p>}
                                     <div>
