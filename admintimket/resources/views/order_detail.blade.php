@@ -52,7 +52,7 @@
                             </li>
                             <li>
                                 <span>Id :</span>
-                                <p>{{$order->user->id}}</p>
+                                <p>{{ $order->user->id }}</p>
                             </li>
                             <li><span>Name :</span>
                                 <p>{{ $order->user->name }} {{ $order->user->lastName }}</p>
