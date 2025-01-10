@@ -105,7 +105,7 @@ export const Contact = () => {
                       <li><Link to="tel:+212627883606" target="_blank0"><BiSolidPhoneCall /><span>+212627883606</span></Link></li>
                       <li><Link to="mailto:abderrahim_270@hotmail.com" target="_blank0"><MdEmail /><span>abderrahim_270@hotmail.com</span></Link></li>
                       <li><Link to="https://www.facebook.com/mariobarkati.co" target="_blank0"><BsFacebook /> <span>Abderrahim Tim</span></Link></li>
-                      <li><Link to="https://wa.me/message/ESRMW5WZ6BTPI1" target="_blank0"><IoLogoWhatsapp /> <span>+212652583234</span></Link></li>
+                      <li><Link to="https://wa.me/message/ESRMW5WZ6BTPI1" target="_blank0"><IoLogoWhatsapp /> <span>+212 627-883606</span></Link></li>
                       <li><Link to="https://t.me/+212627883606" target="_blank0"><BsTelegram /> <span>Electrotim</span></Link></li>
                     </ul>
                   </div>
